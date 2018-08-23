@@ -1,19 +1,21 @@
 import discord
+from discord.ext.commands import Bot
 from discord.ext import commands
+import asyncio
+import os
 
-bot = commands.Bot(command_prefix='!')
+Client = discord.Client()
+client = commands.Bot(command_prefix = "!")
 
-@bot.event
+@client.event
 async def on_ready():
-    print('Logged in as')
-    print(bot.user.name)
-    print(bot.user.id)
-    print('------')
-
-@commands.command()
-async def ug(ctx):
-    await ctx.send("Nub blahin', get back ta' work!")
-    
-bot.add_command(ug)
-
-bot.run('NDI5MzE1NDA4NTA4NjE2NzA1.DmDCQQ.qgFaBYsOSlm-Uc5UnEc5yZ_Zd40')
+    print ("Skah lat.")
+    await client.change_presence(game=discord.Game(name="Imp'Raguk"))
+                                 
+@client.event
+async def on_message(message):
+    if message.content.startswith("!ug"):
+        msg = 'Nub time for blahin {0.author.mention}, get back ta' working'.format(message)
+        await client.send_message(message.channel, msg)
+        
+client.run(os.getenv('TOKEN'))
