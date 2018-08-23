@@ -15,7 +15,7 @@ async def on_ready():
 @client.event
 async def on_message(message):
     if message.content.startswith("!ug"):
-        msg = 'Nub time for blahin {0.author.mention}, get back ta' working'.format(message)
+        msg = ("Nub time for blahin {0.author.mention}, get back ta' working".format(message))
         await client.send_message(message.channel, msg)
         
 client.run(os.getenv('TOKEN'))
