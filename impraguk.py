@@ -3,7 +3,7 @@ from discord.ext import commands
 
 bot = commands.Bot(command_prefix='!')
 
-@bot.command()
+@commands.command()
 async def ug(ctx):
     await ctx.send("Nub blahin', get back ta' work!")
     
