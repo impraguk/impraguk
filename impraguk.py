@@ -15,4 +15,4 @@ async def on_ready():
 async def thromka(ctx):
     await ctx.send("Nub blahin', get back ta' work")
 
-
+client.run(os.getenv('TOKEN'))
