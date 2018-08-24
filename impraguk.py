@@ -35,5 +35,13 @@ async def on_message(message):
         ologname = a + b + c
         msg = (":speech_balloon:{0.author.mention}**, lat Raguk name iz:** ".format(message) + ologname)
         await client.send_message(message.channel, msg)
+   
+@client.event
+async def help_message(message):
+    if message.content.startswith("!help"):
+        embed = discord.Embed(title="Elder Imp'Raguk", description="A notable lore character.", color=0xcc0909)
+        
+        await client.send_message(message.channel, embed)
+    
                        
 client.run(os.getenv('TOKEN'))
