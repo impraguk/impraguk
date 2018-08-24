@@ -50,5 +50,10 @@ async def on_message(message):
         embed.add_field(name = "!music", value = "Displays all associated commands for 'Music.'(TBA)", inline=False)
         
         await client.send_message(message.channel, embed=embed)
+        
+@client.event
+async def on_member_join(member):
+    newUserMessage = ("Throm'ka, {0.member.mention}, @wud - da Boss - will get lat sorted wiv roles agh all dat.".format(message))
+    await client.send_message(member, newUserMessage)
                           
 client.run(os.getenv('TOKEN'))
