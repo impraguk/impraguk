@@ -11,9 +11,9 @@ Client = discord.Client()
 client = commands.Bot(command_prefix = "!")
 
 consonants = ['B','C','D','F','G','H','J','K','L','M','N','P','Q','R','S','T','V','X','Z','W','Y']
-a = random.randint(0,21)
+a = random.randint(0,20)
 vowels = ['A','E','I','O','U']
-b = random.randint(0,5)
+b = random.randint(0,4)
 
 @client.event
 async def on_ready():
@@ -31,7 +31,7 @@ async def on_message(message):
         msg = (":speech_balloon:{0.author.mention}**, lat Raguk name iz:** ".format(message) + orkname)
         await client.send_message(message.channel, msg)
     elif message.content.startswith("!ologname"):
-        ologname = consonants[a] + vowels[b] + consonants[a].lower
+        ologname = (consonants[a) + (vowels[b]) + (consonants[a].lower)
         msg = (":speech_balloon:{0.author.mention}**, lat Raguk name iz:** ".format(message) + ologname)
         await client.send_message(message.channel, msg)
                        
