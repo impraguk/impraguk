@@ -10,11 +10,6 @@ import os
 Client = discord.Client()
 client = commands.Bot(command_prefix = "!")
 
-consonants = ['B','C','D','F','G','H','J','K','L','M','N','P','Q','R','S','T','V','X','Z','W','Y']
-a = random.randint(0,20)
-vowels = ['A','E','I','O','U']
-b = random.randint(0,4)
-
 @client.event
 async def on_ready():
     print ("Skah lat.")
@@ -31,7 +26,13 @@ async def on_message(message):
         msg = (":speech_balloon:{0.author.mention}**, lat Raguk name iz:** ".format(message) + orkname)
         await client.send_message(message.channel, msg)
     elif message.content.startswith("!ologname"):
-        ologname = (consonants[a].str) + (vowels[b].str) + (consonants[a].str.lower)
+        lines = open('consonants.txt').read().splitlines()
+        ologLetter1 = random.choice(lines)
+        lines = open('vowels.txt').read().splitlines()
+        ologLetter2 = random.choice(lines)
+        lines = open('consonants.txt').read().splitlines()
+        ologLetter3 = random.choice(lines).lower
+        ologname = ologLetter1 + ologLetter2 + ologLetter3
         msg = (":speech_balloon:{0.author.mention}**, lat Raguk name iz:** ".format(message) + ologname)
         await client.send_message(message.channel, msg)
                        
