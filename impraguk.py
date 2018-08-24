@@ -22,7 +22,7 @@ async def on_message(message):
     elif message.content.startswith("!name"):
         lines = open('orknames.txt').read().splitlines()
         orkname = random.choice(lines)
-        msg = ("{0.author.mention}, lat Raguk name is: %s" % (orkname).format(message))
+        msg = ("{0.author.mention}, lat Raguk name iz:",(orkname).format(message))
         await client.send_message(message.channel, msg)
                
                
