@@ -1,4 +1,5 @@
 import discord
+import random
 from discord.ext.commands import Bot
 from discord.ext import commands
 from discord.voice_client import VoiceClient
@@ -19,7 +20,9 @@ async def on_message(message):
         msg = ("Nub time for blahin {0.author.mention}, get back ta' working.".format(message))
         await client.send_message(message.channel, msg)
     elif message.content.startswith("!name"):
-        msg = ("{0.author.mention}, lat Raguk name is: blah blah".format(message))
+        lines = open('orknames.txt').read().splitlines()
+        orkname = random.choice(lines)
+        msg = ("{0.author.mention}, lat Raguk name is:"(orkname).format(message))
         await client.send_message(message.channel, msg)
                
                
