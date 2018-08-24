@@ -45,6 +45,6 @@ async def on_message(message):
         embed.add_field(name = "!orkname", value = "Generate an orkish name fit for a Raguk.", inline=False)
         embed.add_field(name = "!ologname", value = "Generate an olog name fit for a Raguk.", inline=False)
     
-        await client.send_message(message, embed=embed)
+        await client.send_message(message.channel, embed=embed)
                           
 client.run(os.getenv('TOKEN'))
