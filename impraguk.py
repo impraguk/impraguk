@@ -45,7 +45,7 @@ async def on_message(message):
         embed.add_field(name = "!orkname", value = "Generate an orkish name fit for a Raguk.", inline=False)
         embed.add_field(name = "!ologname", value = "Generate an olog name fit for a Raguk.", inline=False)
         embed.add_field(name = "!goboname", value = "Generate a goblin name fit for a Raguk.(TBA)", inline=False)
-        embed.add_field(name = "!proverb", value = "Generate a goblin name fit for a Raguk.(TBA)", inline=False)
+        embed.add_field(name = "!proverb", value = "Spits out a common Raguk proverb.(TBA)", inline=False)
         embed.add_field(name = "!calendar", value = "Displays all associated commands for 'Calendar.'(TBA)", inline=False)
         embed.add_field(name = "!music", value = "Displays all associated commands for 'Music.'(TBA)", inline=False)
         
