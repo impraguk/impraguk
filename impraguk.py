@@ -30,7 +30,7 @@ async def on_message(message):
         a = random.choice(lines)
         lines = open('vowels.txt').read().splitlines()
         b = random.choice(lines)
-        lines = open('consonants.txt').read().splitlines()
+        lines = open('consonants2.txt').read().splitlines()
         c = random.choice(lines)
         ologname = a + b + c
         msg = (":speech_balloon:{0.author.mention}**, lat Raguk name iz:** ".format(message) + ologname)
