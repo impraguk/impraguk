@@ -23,7 +23,7 @@ async def on_message(message):
         lines = open('orknames.txt').read().splitlines()
         orkname = random.choice(lines)
         preMsg = ("{0.author.mention}, lat Raguk name iz: ".format(message))
-        msg = (preMsg),(orkname)
+        msg = preMsg,orkname
         await client.send_message(message.channel, msg)
                
                
