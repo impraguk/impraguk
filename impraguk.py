@@ -37,10 +37,13 @@ async def on_message(message):
         await client.send_message(message.channel, msg)
    
 @client.event
-async def help_message(message):
-    if message.content.startswith("!help"):
-        msg = discord.Embed(title="Elder Imp'Raguk", description="A notable lore character.", color=0xcc0909)
-        await client.send_message(message.channel, msg)
+async def help(ctx):
+    embed = discord.Embed(title="Elder Imp'Raguk", description="A notable lore character.", color=0xcc0909)
     
-                       
+    embed.add_field(name = "!ug", value = "Say Hello to Imp'Raguk.", inline=False)
+    embed.add_field(name = "!orkname", value = "Generate an orkish name fit for a Raguk.", inline=False)
+    embed.add_field(name = "!ologname", value = "Generate an olog name fit for a Raguk.", inline=False)
+    
+    await ctx.send(embed=embed)
+                          
 client.run(os.getenv('TOKEN'))
