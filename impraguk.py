@@ -3,7 +3,6 @@ from discord.ext.commands import Bot
 from discord.ext import commands
 import asyncio
 import os
-from discord.voice_Client import VoiceClient
 
 Client = discord.Client()
 client = commands.Bot(command_prefix = "!")
