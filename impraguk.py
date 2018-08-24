@@ -29,7 +29,7 @@ if __name__ == "__main__":
         try:
             bot.load_extension(extension)
         except Exception as e:
-            exc = ("(): ().format(type(e).__name__, e))
+            exc = ("(): ()".format(type(e).__name__, e))
             print ("Failed to load extension ()\n()".format(extension, exc))       
         
 client.run(os.getenv('TOKEN'))
