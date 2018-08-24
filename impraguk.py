@@ -20,11 +20,13 @@ async def on_message(message):
     if message.content.startswith("!ug"):
         msg = (":speech_balloon:**Nub time for blahin {0.author.mention}, get back ta' working.**".format(message))
         await client.send_message(message.channel, msg)
+        
     elif message.content.startswith("!orkname"):
         lines = open('orknames.txt').read().splitlines()
         orkname = random.choice(lines)
         msg = (":speech_balloon:{0.author.mention}**, lat Raguk name iz:** ".format(message) + orkname)
         await client.send_message(message.channel, msg)
+        
     elif message.content.startswith("!ologname"):
         lines = open('consonants.txt').read().splitlines()
         a = random.choice(lines)
@@ -35,10 +37,8 @@ async def on_message(message):
         ologname = a + b + c
         msg = (":speech_balloon:{0.author.mention}**, lat Raguk name iz:** ".format(message) + ologname)
         await client.send_message(message.channel, msg)
-   
-@client.event
-async def help(message):
-    if message.content.startswith("!help"):
+        
+    elif message.content.startswith("!help"):
         embed = discord.Embed(title="Elder Imp'Raguk", description="A notable lore character.", color=0xcc0909)
     
         embed.add_field(name = "!ug", value = "Say Hello to Imp'Raguk.", inline=False)
