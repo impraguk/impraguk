@@ -30,7 +30,7 @@ async def on_message(message):
         orkname = random.choice(lines)
         msg = (":speech_balloon:{0.author.mention}**, lat Raguk name iz:** ".format(message) + orkname)
         await client.send_message(message.channel, msg)
-     elif message.content.startswith("!ologname"):
+    elif message.content.startswith("!ologname"):
         ologname = consonants[a] + vowels[b] + consonants[a].lower
         msg = (":speech_balloon:{0.author.mention}**, lat Raguk name iz:** ".format(message) + ologname)
         await client.send_message(message.channel, msg)
