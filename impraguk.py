@@ -19,7 +19,7 @@ async def on_message(message):
         msg = ("Nub time for blahin {0.author.mention}, get back ta' working.".format(message))
         await client.send_message(message.channel, msg)
     elif message.content.startswith("!name"):
-        msg = ("{0.author.mention} Lat Raguk name is: blah blah".format(message))
+        msg = ("{0.author.mention}, lat Raguk name is: blah blah".format(message))
         await client.send_message(message.channel, msg)
                
                
