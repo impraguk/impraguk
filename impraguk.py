@@ -53,7 +53,7 @@ async def on_message(message):
         
 @client.event
 async def on_member_join(member):
-    newUserMessage = ("Throm'ka, {0.member.mention}, @wud - da Boss - will get lat sorted wiv roles agh all dat.".format(message))
+    newUserMessage = ("Throm'ka, {0.member.mention}, @Wargoth - da Boss - will get lat sorted wiv roles agh all dat.".format(message))
     await client.send_message(member, newUserMessage)
                           
 client.run(os.getenv('TOKEN'))
