@@ -32,8 +32,7 @@ async def on_message(message):
         ologLetter2 = random.choice(lines)
         lines = open('consonants.txt').read().splitlines()
         ologLetter3 = random.choice(lines).lower
-        ologname = ologLetter1 + ologLetter2 + ologLetter3
-        msg = (":speech_balloon:{0.author.mention}**, lat Raguk name iz:** ".format(message) + ologname)
+        msg = (":speech_balloon:{0.author.mention}**, lat Raguk name iz:** ".format(message) + ologLetter1 + ologLetter2 + ologLetter3)
         await client.send_message(message.channel, msg)
                        
 client.run(os.getenv('TOKEN'))
