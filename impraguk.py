@@ -10,8 +10,6 @@ import os
 Client = discord.Client()
 client = commands.Bot(command_prefix = "!")
 
-newUserMessage = ("Throm'ka, grunt {}! Da boss, @Wargoth, will get lat sorted wiv roles agh all dat skah. If lat wanna interact wiv me, do: _!help_".format(member.mention))
-
 @client.event
 async def on_ready():
     print ("Skah lat.")
@@ -55,6 +53,7 @@ async def on_message(message):
         
 @client.event
 async def on_member_join(member):
+    newUserMessage = ("Throm'ka, grunt {}! Da boss, @Wargoth, will get lat sorted wiv roles agh all dat skah. If lat wanna interact wiv me, do: _!help_".format(member.mention))
     for channel in member.server.channels:
         if channel.name == 'join-log':
             await client.send_message(channel, newUserMessage)
