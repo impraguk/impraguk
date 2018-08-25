@@ -27,6 +27,12 @@ async def on_message(message):
         msg = (":speech_balloon:{0.author.mention}**, lat Raguk name iz:** ".format(message) + orkname)
         await client.send_message(message.channel, msg)
         
+   elif message.content.startswith("!goboname"):
+        lines = open('gobonames.txt').read().splitlines()
+        orkname = random.choice(lines)
+        msg = (":speech_balloon:{0.author.mention}**, lat Raguk name iz:** ".format(message) + orkname)
+        await client.send_message(message.channel, msg)
+        
     elif message.content.startswith("!ologname"):
         lines = open('consonants.txt').read().splitlines()
         a = random.choice(lines)
@@ -44,7 +50,7 @@ async def on_message(message):
         embed.add_field(name = "!ug", value = "Say Hello to Imp'Raguk.", inline=False)
         embed.add_field(name = "!orkname", value = "Generate an orkish name fit for a Raguk.", inline=False)
         embed.add_field(name = "!ologname", value = "Generate an olog name fit for a Raguk.", inline=False)
-        embed.add_field(name = "!goboname", value = "Generate a goblin name fit for a Raguk.(TBA)", inline=False)
+        embed.add_field(name = "!goboname", value = "Generate a goblin name fit for a Raguk.", inline=False)
         embed.add_field(name = "!proverb", value = "Spits out a common Raguk proverb.(TBA)", inline=False)
         embed.add_field(name = "!calendar", value = "Displays all associated commands for 'Calendar.'(TBA)", inline=False)
         embed.add_field(name = "!music", value = "Displays all associated commands for 'Music.'(TBA)", inline=False)
@@ -53,7 +59,7 @@ async def on_message(message):
         
 @client.event
 async def on_member_join(member):
-    newUserMessage = (":speech_balloon:**Throm'ka, grunt {}! Da boss will get lat sorted wiv roles agh all dat skah. If lat wanna interact wiv me, do:** _!help_".format(member.mention))
+    newUserMessage = (":speech_balloon:**Throm'ka, grunt {}! Da boss, {}, will get lat sorted wiv roles agh all dat skah. If lat wanna interact wiv me, do:** _!help_".format(member.mention, <@310498610527862784>))
     for channel in member.server.channels:
         if channel.name == 'join-log':
             await client.send_message(channel, newUserMessage)
