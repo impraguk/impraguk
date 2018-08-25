@@ -30,7 +30,7 @@ async def on_message(message):
    elif message.content.startswith("!goboname"):
         lines = open('gobonames.txt').read().splitlines()
         orkname = random.choice(lines)
-        msg = (":speech_balloon:{0.author.mention}**, lat Raguk name iz:** ".format(message) + orkname)
+        msg = (":speech_balloon:{0.author.mention}**, lat Raguk name iz:** ".format(message) + goboname)
         await client.send_message(message.channel, msg)
         
     elif message.content.startswith("!ologname"):
