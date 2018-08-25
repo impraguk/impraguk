@@ -59,7 +59,7 @@ async def on_message(message):
         
 @client.event
 async def on_member_join(member):
-    newUserMessage = (":speech_balloon:**Throm'ka, grunt {}! Da boss, {}, will get lat sorted wiv roles agh all dat skah. If lat wanna interact wiv me, do:** _!help_".format(member.mention, <@310498610527862784>))
+    newUserMessage = (":speech_balloon:**Throm'ka, grunt {}! Da boss, <@310498610527862784>, will get lat sorted wiv roles agh all dat skah. If lat wanna interact wiv me, do:** _!help_".format(member.mention))
     for channel in member.server.channels:
         if channel.name == 'join-log':
             await client.send_message(channel, newUserMessage)
