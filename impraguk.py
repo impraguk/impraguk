@@ -73,4 +73,4 @@ async def on_member_join(member):
                           
 client.run(os.getenv('TOKEN'))
 
-https://i.gyazo.com/9081f064e65f86c817b7f79c4a7f1611.png
+
