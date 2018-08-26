@@ -44,6 +44,10 @@ async def on_message(message):
         msg = (":speech_balloon:{0.author.mention}**, lat Raguk name iz:** ".format(message) + ologname)
         await client.send_message(message.channel, msg)
         
+    elif message.content.startswith("!skin") and if "<@&480769658501333002>" in [y.id for y in author.roles]:
+        await client.send_message(message.channel, "{0.author.mention} https://i.gyazo.com/9081f064e65f86c817b7f79c4a7f1611.png".format(message))
+        
+        
     elif message.content.startswith("!help"):
         embed = discord.Embed(title="Elder Imp'Raguk", description="A notable lore character.", color=0xcc0909)
     
@@ -51,12 +55,15 @@ async def on_message(message):
         embed.add_field(name = "!orkname", value = "Generate an orkish name fit for a Raguk.", inline=False)
         embed.add_field(name = "!ologname", value = "Generate an olog name fit for a Raguk.", inline=False)
         embed.add_field(name = "!goboname", value = "Generate a goblin name fit for a Raguk.", inline=False)
+        embed.add_field(name = "!skin", value = "Gives you a skin based on your Rank.", inline=False)
         embed.add_field(name = "!proverb", value = "Spits out a common Raguk proverb.(TBA)", inline=False)
         embed.add_field(name = "!calendar", value = "Displays all associated commands for 'Calendar.'(TBA)", inline=False)
         embed.add_field(name = "!music", value = "Displays all associated commands for 'Music.'(TBA)", inline=False)
         
         await client.send_message(message.channel, embed=embed)
         
+        
+              
 @client.event
 async def on_member_join(member):
     newUserMessage = (":speech_balloon:**Throm'ka, grunt {}! Da boss, <@310498610527862784>, will get lat sorted wiv roles agh all dat skah. If lat wanna interact wiv me, do:** _!help_".format(member.mention))
@@ -65,3 +72,5 @@ async def on_member_join(member):
             await client.send_message(channel, newUserMessage)
                           
 client.run(os.getenv('TOKEN'))
+
+https://i.gyazo.com/9081f064e65f86c817b7f79c4a7f1611.png
