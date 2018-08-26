@@ -60,7 +60,7 @@ async def on_message(message):
         
         
     elif message.content.startswith("!skin"):
-        if "<@&480769658501333002>" in [role.id for role in message.author.roles]:
+        if "480769658501333002" in [role.id for role in message.author.roles]:
             await client.send_message(message.channel, "{0.author.mention} https://bit.ly/2PCWbjf".format(message))
         
         
