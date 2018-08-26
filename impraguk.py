@@ -44,8 +44,9 @@ async def on_message(message):
         msg = (":speech_balloon:{0.author.mention}**, lat Raguk name iz:** ".format(message) + ologname)
         await client.send_message(message.channel, msg)
         
-    elif message.content.startswith("!skin") and if "<@&480769658501333002>" in [y.id for y in author.roles]:
-        await client.send_message(message.channel, "{0.author.mention} https://i.gyazo.com/9081f064e65f86c817b7f79c4a7f1611.png".format(message))
+    elif message.content.startswith("!skin"):
+        if "<@&480769658501333002>" in [y.id for y in author.roles]:
+            await client.send_message(message.channel, "{0.author.mention} https://i.gyazo.com/9081f064e65f86c817b7f79c4a7f1611.png".format(message))
         
         
     elif message.content.startswith("!help"):
