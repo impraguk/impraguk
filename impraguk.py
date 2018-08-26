@@ -17,23 +17,23 @@ async def on_ready():
                                 
 @client.event
 async def on_message(message):
-    if message.content.startswith("!ug"):
+    if message.content.lower().startswith("!ug"):
         msg = (":speech_balloon:**Nub time for blahin {0.author.mention}, get back ta' working.**".format(message))
         await client.send_message(message.channel, msg)
         
-    elif message.content.startswith("!orkname"):
+    elif message.content.lower().startswith("!orkname"):
         lines = open('orknames.txt').read().splitlines()
         orkname = random.choice(lines)
         msg = (":speech_balloon:{0.author.mention}**, lat Raguk name iz:** ".format(message) + orkname)
         await client.send_message(message.channel, msg)
         
-    elif message.content.startswith("!goboname"):
+    elif message.content.lower().startswith("!goboname"):
         lines = open('gobonames.txt').read().splitlines()
         goboname = random.choice(lines)
         msg = (":speech_balloon:{0.author.mention}**, lat Raguk name iz:** ".format(message) + goboname)
         await client.send_message(message.channel, msg)
         
-    elif message.content.startswith("!ologname"):
+    elif message.content.lower().startswith("!ologname"):
         lines = open('consonants.txt').read().splitlines()
         a = random.choice(lines)
         lines = open('vowels.txt').read().splitlines()
@@ -44,7 +44,7 @@ async def on_message(message):
         msg = (":speech_balloon:{0.author.mention}**, lat Raguk name iz:** ".format(message) + ologname)
         await client.send_message(message.channel, msg)
         
-    elif message.content.startswith("!help"):
+    elif message.content.lower().startswith("!help"):
         embed = discord.Embed(title="Elder Imp'Raguk", description="A notable lore character.", color=0xcc0909)
     
         embed.add_field(name = "!ug", value = "Say Hello to Imp'Raguk.", inline=False)
@@ -59,11 +59,18 @@ async def on_message(message):
         await client.send_message(message.channel, embed=embed)
         
         
-    elif message.content.startswith("!skin"):
+    elif message.content.lower().startswith("!skin"):
         if "480769658501333002" in [role.id for role in message.author.roles]:
-            await client.send_message(message.channel, "{0.author.mention} https://bit.ly/2PCWbjf".format(message))
-        
-        
+            await client.send_message(message.channel, ":speech_balloon:**{0.author.mention}, 'eres lat uniform, grunt!** https://bit.ly/2PCWbjf".format(message))
+        elif "480769399352066059" in [role.id for role in message.author.roles]:
+            await client.send_message(message.channel, ":speech_balloon:**{0.author.mention}, 'eres lat uniform, troopa!** [skin]".format(message))
+        elif "480769306016350219" in [role.id for role in message.author.roles]:
+            await client.send_message(message.channel, ":speech_balloon:**{0.author.mention}, 'eres lat uniform, boss!** [skin]".format(message))
+        elif "480769254665224212" in [role.id for role in message.author.roles]:
+            await client.send_message(message.channel, ":speech_balloon:**{0.author.mention}, 'eres lat uniform, elda!** [skin]".format(message))
+        else:
+            await client.send_message(message.channel, ":speech_balloon:**{0.author.mention}, lat ain' auforized for dat. Skah off 'fore mi lop off lat 'ead.".format(message))
+            
               
 @client.event
 async def on_member_join(member):
