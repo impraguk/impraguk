@@ -13,7 +13,7 @@ client = commands.Bot(command_prefix = "!")
 @client.event
 async def on_ready():
     print ("Skah lat.")
-    await client.change_presence(game=discord.Game(name="with Bloodsteel."))
+    await client.change_presence(game=discord.Game(name="with Wud's balls."))
                                 
 @client.event
 async def on_message(message):
@@ -52,7 +52,8 @@ async def on_message(message):
         embed.add_field(name = "!ologname", value = "Generate an olog name fit for a Raguk.", inline=False)
         embed.add_field(name = "!goboname", value = "Generate a goblin name fit for a Raguk.", inline=False)
         embed.add_field(name = "!skin", value = "Gives you a skin based on your Rank.", inline=False)
-        embed.add_field(name = "!proverb", value = "Spits out a common Raguk proverb.(TBA)", inline=False)
+        embed.add_field(name = "!ppoint", value = "Displays your current prestige points. (TBA)", inline=False)
+        embed.add_field(name = "!proverb", value = "Spits out a common Raguk proverb.", inline=False)
         embed.add_field(name = "!calendar", value = "Displays all associated commands for 'Calendar.'(TBA)", inline=False)
         embed.add_field(name = "!music", value = "Displays all associated commands for 'Music.'(TBA)", inline=False)
         
@@ -70,6 +71,12 @@ async def on_message(message):
             await client.send_message(message.channel, ":speech_balloon:**{0.author.mention}, 'eres lat uniform, elda!** [skin]".format(message))
         else:
             await client.send_message(message.channel, ":speech_balloon:**{0.author.mention}, lat ain' auforized for dat! Skah off 'fore mi lop off lat 'ead.**".format(message))
+            
+    elif message.content.lower().startswith("!proverb"):
+        lines = open('proverbs.txt').read().splitlines()
+        proverbs = random.choice(lines)
+        msg = (":speech_balloon:{0.author.mention}".format(message) + proverbs)
+        await client.send_message(message.channel, msg)
             
               
 @client.event
