@@ -59,7 +59,7 @@ async def on_message(message):
         await client.send_message(message.channel, embed=embed)
         
     elif message.content.startswith("!skin"):
-        if author.has_role("Grunt"):   
+        if "Grunt" in [y.name.lower() for y in author.roles]:  
             await client.send_message(message.channel, "{0.author.mention} https://bit.ly/2PCWbjf".format(message))
         
         
