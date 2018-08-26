@@ -44,10 +44,6 @@ async def on_message(message):
         msg = (":speech_balloon:{0.author.mention}**, lat Raguk name iz:** ".format(message) + ologname)
         await client.send_message(message.channel, msg)
         
-    elif message.content.startswith("!skin"):
-        @commands.has_any_role("Grunt")   
-        await client.send_message(message.channel, "{0.author.mention} https://bit.ly/2PCWbjf".format(message))
-        
     elif message.content.startswith("!help"):
         embed = discord.Embed(title="Elder Imp'Raguk", description="A notable lore character.", color=0xcc0909)
     
@@ -61,6 +57,10 @@ async def on_message(message):
         embed.add_field(name = "!music", value = "Displays all associated commands for 'Music.'(TBA)", inline=False)
         
         await client.send_message(message.channel, embed=embed)
+        
+    elif message.content.startswith("!skin"):
+        if author.has_any_role("Grunt")   
+            await client.send_message(message.channel, "{0.author.mention} https://bit.ly/2PCWbjf".format(message))
         
         
               
