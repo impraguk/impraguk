@@ -46,7 +46,7 @@ async def on_message(message):
         
     elif message.content.startswith("!skin"):
         @commands.has_any_role("Grunt")   
-        await client.send_message(message.channel, "{0.author.mention} https://i.gyazo.com/9081f064e65f86c817b7f79c4a7f1611.png%22".format(message))
+        await client.send_message(message.channel, "{0.author.mention} https://bit.ly/2PCWbjf".format(message))
         
     elif message.content.startswith("!help"):
         embed = discord.Embed(title="Elder Imp'Raguk", description="A notable lore character.", color=0xcc0909)
