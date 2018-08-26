@@ -45,9 +45,8 @@ async def on_message(message):
         await client.send_message(message.channel, msg)
         
     elif message.content.startswith("!skin"):
-        if "<@&480769658501333002>" in [y.id for y in author.roles]:
-            await client.send_message(message.channel, "{0.author.mention} https://i.gyazo.com/9081f064e65f86c817b7f79c4a7f1611.png".format(message))
-        
+        @commands.has_any_role("Grunt")   
+        await client.send_message(message.channel, "{0.author.mention} https://i.gyazo.com/9081f064e65f86c817b7f79c4a7f1611.png%22.format(message))
         
     elif message.content.startswith("!help"):
         embed = discord.Embed(title="Elder Imp'Raguk", description="A notable lore character.", color=0xcc0909)
@@ -73,5 +72,3 @@ async def on_member_join(member):
             await client.send_message(channel, newUserMessage)
                           
 client.run(os.getenv('TOKEN'))
-
-
