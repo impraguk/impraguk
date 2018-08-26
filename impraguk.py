@@ -69,7 +69,7 @@ async def on_message(message):
         elif "480769254665224212" in [role.id for role in message.author.roles]:
             await client.send_message(message.channel, ":speech_balloon:**{0.author.mention}, 'eres lat uniform, elda!** [skin]".format(message))
         else:
-            await client.send_message(message.channel, ":speech_balloon:**{0.author.mention}, lat ain' auforized for dat. Skah off 'fore mi lop off lat 'ead.".format(message))
+            await client.send_message(message.channel, ":speech_balloon:**{0.author.mention}, lat ain' auforized for dat! Skah off 'fore mi lop off lat 'ead.**".format(message))
             
               
 @client.event
