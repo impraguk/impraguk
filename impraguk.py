@@ -13,7 +13,7 @@ client = commands.Bot(command_prefix = "!")
 @client.event
 async def on_ready():
     print ("Skah lat.")
-    await client.change_presence(game=discord.Game(name="with Wud's balls."))
+    await client.change_presence(game=discord.Game(name="with Bloodsteel."))
                                 
 @client.event
 async def on_message(message):
