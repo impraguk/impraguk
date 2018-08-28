@@ -77,8 +77,15 @@ async def on_message(message):
         proverbs = random.choice(lines)
         msg = (":speech_balloon:{0.author.mention}".format(message) + proverbs)
         await client.send_message(message.channel, msg)
-            
-              
+        
+        
+@client.event
+async def on_reaction_add(reaction, user):
+    channel = reaction.message.channel
+    if reaction.emoji == ":one:":
+        if "481458248877080590" in [role.id for role in message.author.roles]:
+            await client.sendmessage(message.channel, "bitch idiot")
+               
 @client.event
 async def on_member_join(member):
     newUserMessage = (":speech_balloon:**Throm'ka, grunt {}! Da boss, <@310498610527862784>, will get lat sorted wiv roles agh all dat skah. If lat wanna interact wiv me, do:** _!help_".format(member.mention))
