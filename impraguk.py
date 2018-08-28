@@ -64,9 +64,9 @@ async def on_message(message):
         if "480769658501333002" in [role.id for role in message.author.roles]:
             await client.send_message(message.channel, ":speech_balloon:**{0.author.mention}, 'eres lat uniform, grunt!** https://bit.ly/2PCWbjf".format(message))
         elif "480769399352066059" in [role.id for role in message.author.roles]:
-            await client.send_message(message.channel, ":speech_balloon:**{0.author.mention}, 'eres lat uniform, troopa!** [skin]".format(message))
+            await client.send_message(message.channel, ":speech_balloon:**{0.author.mention}, 'eres lat uniform, troopa!** https://bit.ly/2Lzirrd".format(message))
         elif "480769306016350219" in [role.id for role in message.author.roles]:
-            await client.send_message(message.channel, ":speech_balloon:**{0.author.mention}, 'eres lat uniform, boss!** [skin]".format(message))
+            await client.send_message(message.channel, ":speech_balloon:**{0.author.mention}, 'eres lat uniform, boss!** https://bit.ly/2wyE45A".format(message))
         elif "480769254665224212" in [role.id for role in message.author.roles]:
             await client.send_message(message.channel, ":speech_balloon:**{0.author.mention}, 'eres lat uniform, elda!** [skin]".format(message))
         else:
