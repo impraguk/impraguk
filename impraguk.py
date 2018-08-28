@@ -84,7 +84,7 @@ async def on_reaction_add(reaction, user):
     channel = reaction.message.channel
     if reaction.emoji == ":one:":
         if "481458248877080590" in [role.id for role in message.author.roles]:
-            await client.sendmessage(channel, "bitch idiot")
+            await client.send_message(channel, "bitch idiot")
                
 @client.event
 async def on_member_join(member):
