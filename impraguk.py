@@ -79,13 +79,23 @@ async def on_message(message):
         await client.send_message(message.channel, msg)
         
    
-    elif message.content.lower().startswith("!join"):
-        channel = message.author.voice.voice_channel
-        await client.join_voice_channel(channel)
-        if message.content.lower().startswith("!leave"):
-            await client.disconnect()
+@client.command(pass_context=True)
+async def join(ctx):
+    #"""Joins your voice channel"""
+    author = ctx.message.author
+    voice_channel = author.voice_channel
+    vc = await client.join_voice_channel(voice_channel)
 
-        
+    
+@client.command(pass_context = True)
+async def leave(ctx):
+    for x in client.voice_clients:
+        if(x.server == ctx.message.server):
+            return await x.disconnect()
+
+    return await client.say("I am not connected to any voice channel on this server!")
+
+
 @client.event
 async def on_member_join(member):
     newUserMessage = (":speech_balloon:**Throm'ka, grunt {}! Da boss, <@310498610527862784>, will get lat sorted wiv roles agh all dat skah. If lat wanna interact wiv me, do:** _!help_".format(member.mention))
