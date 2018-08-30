@@ -80,7 +80,7 @@ async def on_message(message):
         
    
 @client.event
-async def join():
+async def join(message):
     if message.content.lower().startswith("!join"):
     #"""Joins your voice channel"""
         author = message.author
@@ -89,7 +89,7 @@ async def join():
 
 
 @client.event
-async def leave():
+async def leave(message):
     if message.content.lower().startswith("!leave"):
         for x in client.voice_clients:
             if(x.server == message.server):
