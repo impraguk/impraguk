@@ -79,21 +79,23 @@ async def on_message(message):
         await client.send_message(message.channel, msg)
         
    
-@client.command(pass_context=True)
-async def join(ctx):
+@client.event
+async def join():
+    if message.content.lower().startswith("!join"):
     #"""Joins your voice channel"""
-    author = ctx.message.author
+    author = message.author
     voice_channel = author.voice_channel
     vc = await client.join_voice_channel(voice_channel)
 
     
-@client.command(pass_context = True)
-async def leave(ctx):
-    for x in client.voice_clients:
-        if(x.server == ctx.message.server):
-            return await x.disconnect()
+@client.event
+async def leave():
+    if message.content.lower().startswith("!leave"):
+        for x in client.voice_clients:
+            if(x.server == message.server):
+                return await x.disconnect()
 
-    return await client.say("I am not connected to any voice channel on this server!")
+        return await client.send_message(channel, "I am not connected to any voice channel on this server!")
 
 
 @client.event
