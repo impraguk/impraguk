@@ -83,7 +83,7 @@ async def on_message(message):
         channel = message.author.voice.voice_channel
         await client.join_voice_channel(channel)
         if message.content.lower().startswith("!leave"):
-            client.disconnect()
+            await client.disconnect()
 
         
 @client.event
