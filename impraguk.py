@@ -83,11 +83,11 @@ async def on_message(message):
 async def join():
     if message.content.lower().startswith("!join"):
     #"""Joins your voice channel"""
-    author = message.author
-    voice_channel = author.voice_channel
-    vc = await client.join_voice_channel(voice_channel)
+        author = message.author
+        voice_channel = author.voice_channel
+        vc = await client.join_voice_channel(voice_channel)
 
-    
+
 @client.event
 async def leave():
     if message.content.lower().startswith("!leave"):
