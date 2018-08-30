@@ -81,7 +81,7 @@ async def on_message(message):
    
     elif message.content.lower().startswith("!join"):
         channel = message.author.voice.voice_channel
-        await.client.join_voice_channel(channel)
+        await client.join_voice_channel(channel)
 
         
 @client.event
