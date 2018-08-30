@@ -86,7 +86,7 @@ async def on_message(message):
     elif message.content.lower().startswith("!leave"):
         server = message.server
         voice_client = client.voice_client_in(server)
-        await voice_client.disconnect
+        await voice_client.disconnect()
 
         
 @client.event
