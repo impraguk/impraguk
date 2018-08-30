@@ -78,12 +78,11 @@ async def on_message(message):
         msg = (":speech_balloon:{0.author.mention}".format(message) + proverbs)
         await client.send_message(message.channel, msg)
         
-        
-@client.command(pass_context = True)
-async def join(ctx):
-    channel = ctx.message.author.voice.voice_channel
-    await client.join_voice_channel(channel)
-        
+   
+    elif message.content.lower().startswith("!join"):
+        channel = message.author.voice.voice_channel
+        await.client.join_voice_channel(channel)
+
         
 @client.event
 async def on_member_join(member):
