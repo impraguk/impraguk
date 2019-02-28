@@ -1,1 +1,1 @@
-worker: python src/impraguk.py
+worker: python impraguk.py
